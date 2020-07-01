@@ -1,0 +1,120 @@
+---
+AllCops:
+  Exclude:
+  - Gemfile
+  - Rakefile
+  - 'test/**/*'
+  - 'examples/**/*'
+  - 'vendor/**/*'
+  - 'lib/bundles/inspec-init/templates/**/*'
+  - .direnv/**/*
+  TargetRubyVersion: 2.6.3
+
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+Layout/HashAlignment:
+  Enabled: false
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+Layout/MultilineBlockLayout:
+  Enabled: false
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+Layout/SpaceAroundOperators:
+  Enabled: false
+Layout/ParameterAlignment:
+  Enabled: true
+Layout/LineLength:
+  Enabled: false
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/ParenthesesAsGroupedExpression:
+  Enabled: false
+Lint/ReturnInVoidContext:
+  Enabled: false
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+  - "test/integration/verify/controls/*"
+Lint/RaiseException:
+  Enabled: true
+Lint/StructNewOverride:
+  Enabled: true
+
+Metrics/ClassLength:
+  Max: 300
+Metrics/MethodLength:
+  Max: 45
+Metrics/BlockLength:
+  Max: 100
+Metrics/AbcSize:
+  Max: 75
+Metrics/BlockNesting:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Max: 25
+Metrics/PerceivedComplexity:
+  Max: 25
+
+Naming/AccessorMethodName:
+  Enabled: false
+Naming/FileName:
+  Enabled: false
+Naming/PredicateName:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/Encoding:
+  Enabled: true
+Style/NumericLiterals:
+  MinDigits: 10
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%':  '{}'
+    '%i': ()
+    '%q': '{}'
+    '%Q': ()
+    '%r': '{}'
+    '%s': ()
+    '%w': '{}'
+    '%W': ()
+    '%x': ()
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/ConditionalAssignment:
+  Enabled: false
+Style/AndOr:
+  Enabled: false
+Style/Not:
+  Enabled: false
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+Style/NegatedIf:
+  Enabled: false
+Style/UnlessElse:
+  Enabled: false
+Style/RedundantBegin:
+  Enabled: false
+Style/IfUnlessModifier:
+  Enabled: false
+Style/RescueStandardError:
+  Enabled: false
+Style/ExponentialNotation:
+  Enabled: true
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: false
+Style/HashTransformValues:
+  Enabled: true
+Style/HashSyntax:
+  Enabled: true
+Style/SlicingWithRange:
+  Enabled: true

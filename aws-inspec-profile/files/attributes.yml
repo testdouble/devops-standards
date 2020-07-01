@@ -1,0 +1,7 @@
+aws_default_region: us-east-2
+password_min_length: 10
+password_max_age: 90
+password_reuse_limit: 10
+access_key_max_age: 90
+public_s3_exemptions:
+  - kmccanless
