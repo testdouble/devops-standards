@@ -1,6 +1,6 @@
 .idea
 .DS_Store
-report.html
+*.html
 *.pdf
 input/
 !input/test-data
