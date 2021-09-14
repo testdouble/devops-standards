@@ -37,18 +37,21 @@ html(lang='en')
                 | with the Center for Internet Security.  This assessment is not certified by the Center for Internet Security.
         each c in json
             div.break-before
-                h1 Control ID
-                p= c["Control ID"]
-                h1 Description
-                p= c.Control
-                h1 Level
-                p= c.Level
-                h1 Scored
-                if c.Scored == "Scored"
-                    p True
-                else
-                    p False
-                h1 Results
+                table.table
+                    tr
+                        th.align-left Control ID
+                        th.align-left Description
+                        th.align-left Scored
+                        th.align-left Severity
+                    tr
+                        td= c["Control ID"]
+                        td= c.Control
+                        td
+                            if c.Scored == "Scored"
+                                p Scored
+                            else
+                                p Not Scored
+                        td= c.Severity
                 table.table
                     tr
                             th.align-left Status
@@ -58,7 +61,7 @@ html(lang='en')
                             tr
                                 td.pass= r.Status
                                 td.pass= r.Message
-                        if r.Status == "Fail"
+                        if r.Status == "FAIL"
                             tr
                                 td.fail= r.Status
                                 td.fail= r.Message
@@ -66,6 +69,7 @@ html(lang='en')
                             tr
                                 td.info= r.Status
                                 td.info= r.Message
+                hr
         div.break-before
             h1 References
             p This report reflects best security practices as presented in the Center for Internet Security Top 20

@@ -6,7 +6,7 @@ const { program } = require('commander');
 
 
 program.version('0.0.1');
-program.option('-f, --file <file>', 'prowler json ouput',"./input/test-data/prowler-output-sample.json")
+program.option('-f, --file <file>', 'prowler json output',"./input/test-data/prowler-output-sample.json")
 program.option('-o, --out <file>', 'output html', './output/report.html')
 program.option('-c, --customer <name>', 'customer for report', 'ACME')
 program.parse(process.argv);
@@ -26,6 +26,7 @@ for (a in grouped){
         n["Control ID"] = o["Control ID"];
         n.Control = o.Control;
         n.Scored = o.Scored;
+        n.Severity = o.Severity;
         n.Level = o.Level;
         n.Region = o.Region;
         return n;
@@ -36,5 +37,3 @@ for (a in grouped){
 fs.writeFileSync('report.json',JSON.stringify(audit));
 const compiledFunction = pug.compileFile('./assets/template.pug');
 fs.writeFileSync(out,compiledFunction({'json': audit, 'moment': moment, 'customer' : customer}));
-
-exec('"/path/to/test file/test.sh" arg1 arg2');
