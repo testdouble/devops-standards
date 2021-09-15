@@ -26,9 +26,7 @@ html(lang='en')
             p
                 | Test Double believes that security is a critical part of any mature software development lifecycle. Therefore, we have developed this report to assess the use of AWS Best Security Practices.
                 | Drawing from the industry standard Center for Internet Security (CIS) Top 20 Critical Controls, the CIS Amazon Web Service Foundations Benchmark, which is the basis for this report,
-                | seeks to establish baseline security controls for an AWS account. The benchmark offers two levels. Level 1 is meant to reflect practical security controls that all accounts should implement.
-                | Level 2 reflects controls that should be implemented in accounts where security is a requirement. Additionally, each control is marked as either "Scored" or "Not Scored".
-                | Scored controls should be considered essential to be in compliance with the level. Not Scored are additional best practices that should be strongly considered to further increase security.
+                | seeks to establish baseline security controls for an AWS account.
             br
             h1 Liability Disclaimer
             br
@@ -37,18 +35,15 @@ html(lang='en')
                 | with the Center for Internet Security.  This assessment is not certified by the Center for Internet Security.
         each c in json
             div.break-before
-                h1 Control ID
-                p= c["Control ID"]
-                h1 Description
-                p= c.Control
-                h1 Level
-                p= c.Level
-                h1 Scored
-                if c.Scored == "Scored"
-                    p True
-                else
-                    p False
-                h1 Results
+                table.table
+                    tr
+                        th.align-left Control ID
+                        th.align-left Description
+                        th.align-right Severity
+                    tr
+                        td= c["Control ID"]
+                        td= c.Control
+                        td.align-right= c.Severity
                 table.table
                     tr
                             th.align-left Status
@@ -58,7 +53,7 @@ html(lang='en')
                             tr
                                 td.pass= r.Status
                                 td.pass= r.Message
-                        if r.Status == "Fail"
+                        if r.Status == "FAIL"
                             tr
                                 td.fail= r.Status
                                 td.fail= r.Message
@@ -66,6 +61,7 @@ html(lang='en')
                             tr
                                 td.info= r.Status
                                 td.info= r.Message
+                hr
         div.break-before
             h1 References
             p This report reflects best security practices as presented in the Center for Internet Security Top 20
