@@ -36,5 +36,3 @@ for (a in grouped){
 fs.writeFileSync('report.json',JSON.stringify(audit));
 const compiledFunction = pug.compileFile('./assets/template.pug');
 fs.writeFileSync(out,compiledFunction({'json': audit, 'moment': moment, 'customer' : customer}));
-
-exec('"/path/to/test file/test.sh" arg1 arg2');
