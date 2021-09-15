@@ -26,6 +26,9 @@ body {
 .align-left {
     text-align: left;
 }
+.align-right {
+    text-align: right;
+}
 .logo {
     height: 4pc;
     width: 4pc;
