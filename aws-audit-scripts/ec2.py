@@ -41,8 +41,8 @@ class Instances:
                     print("No unused AMIs")
 
     def count_instances(self):
-        print("EC2 Instance Count:")
-        print(len(self.response))
+        print("EC2 Instance Count (all states):")
+        print(len(self.response['Reservations']))
 
     def list_unused_security_groups(self):
         sgs = self.client.describe_security_groups()

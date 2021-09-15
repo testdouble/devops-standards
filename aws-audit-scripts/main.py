@@ -8,7 +8,9 @@ from rds import Databases
 from ecs import Clusters
 from lambdas import Functions, Applications
 from s3 import Buckets
-
+from secretsmanager import Secrets
+from sqs import Queues
+from kinesis import Streams
 
 
 def main(argv):
@@ -38,27 +40,29 @@ def main(argv):
     lambda_apps = Applications(session)
     trails = Trails(session)
     recorders = Recorders(session)
-    s3.list_buckets()
-    ec2.list_instances()
-    ec2.list_unused_security_groups()
-    ec2.list_old_amis()
-    #ec2.list_unused_amis()
-    lambda_funcs.list_functions()
-    lambda_apps.list_applications()
-    ecs.list_ecs_clusters()
-    rds.list_db_instances()
-    rds.list_db_clusters()
-    trails.list_trails()
-    recorders.list_recorders()
-    #ec2.unused_security_groups(ec2_client)
-    #ec2.old_amis(ec2_client)
-    #ec2.unused_volumes(ec2_client)
+    secrets = Secrets(session)
+    queues = Queues(session)
+    streams = Streams(session)
+
+    # s3.list_buckets()
+    # ec2.count_instances()
+    # ec2.list_instances()
+    # ec2.list_unused_security_groups()
+    # ec2.list_old_amis()
+    # #ec2.list_unused_amis()
+    # lambda_funcs.list_functions()
+    # lambda_apps.list_applications()
+    # ecs.list_ecs_clusters()
+    # rds.list_db_instances()
+    # rds.list_db_clusters()
+    # trails.list_trails()
+    # recorders.list_recorders()
+    # secrets.list_secrets()
+    #queues.list_queues()
+    streams.list_streams()
     #sts.get_account_id(sts_client)
-    #ec2.list_instances(ec2_client)
-    #ec2 = Instances(ec2_client)
-    #ec2.count_instances()
-    #s3 = Buckets(s3_client)
-   # s3.list_buckets()
+
+
 
 
 
