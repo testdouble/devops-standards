@@ -25,9 +25,7 @@ for (a in grouped){
         n["Account Number"] = o["Account Number"];
         n["Control ID"] = o["Control ID"];
         n.Control = o.Control;
-        n.Scored = o.Scored;
         n.Severity = o.Severity;
-        n.Level = o.Level;
         n.Region = o.Region;
         return n;
     },{});
