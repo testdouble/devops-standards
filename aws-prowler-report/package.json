@@ -10,6 +10,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "commander": "^5.1.0",
+    "html-pdf-node": "^1.0.7",
     "lodash": "^4.17.15",
     "moment": "^2.25.3",
     "pug": "^2.0.4"

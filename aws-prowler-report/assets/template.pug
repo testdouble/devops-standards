@@ -1,11 +1,11 @@
 doctype html
-html(lang='en')
+html(lang='en',style="-webkit-print-color-adjust: exact;font-family:sans-serif;")
     head
         link(rel='stylesheet', href='../assets/style.css')
         title CIS Amazon Web Service Foundations Report
-    body
-        div.green
-            img.logo(src='../assets/td-logo.svg')
+    body(style="padding:0;margin:0;")
+        div(style="background: #6EFF00;width: 100%;text-align:center;padding:20px;")
+            img(style=" height: 4pc; width: 4pc;", src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjAiIHk9IjAiIHdpZHRoPSI5MzMiIGhlaWdodD0iODI1IiB2aWV3Qm94PSIwLCAwLCAzMTEsIDI3NSI+CiAgPGcgaWQ9IkxheWVyXzEiPgogICAgPHBhdGggZD0iTTI3OC4wNjksMC4xNjMgQzI4Mi42NDcsMC4yNjUgMjg2Ljk1NSwxLjY4MSAyOTEuMTI5LDMuNDQyIEMzMTMuNDMxLDEzLjM5OCAzMDUuNzkzLDU4LjY5OSAzMDEuNzk1LDc0Ljc0MSBDMjk1LjkzMSw5OC4yNjYgMjYzLjIyMSwxNjYuMzI1IDI2MC4xMDEsMTczLjIyIEMyNTcuNTU4LDE3OC44NDQgMjQyLjg2OSwyMTYuMDc5IDI1My4xMTcsMjMzLjQxNCBDMjYzLjM2NSwyNTAuNzQ5IDI3OC4yNTQsMjM0LjQ4NyAyODQuNDkzLDIyOC45MjcgQzI5MC43NTYsMjIzLjM0NSAyOTYuNjk1LDIyMC4wOSAzMDkuMDQ3LDIzMy43MDMgQzMwOS4wNDcsMjMzLjcwMyAzMTUuMDMxLDI0Mi42NDMgMzA1LjQzNCwyNDkuMzMgQzMwNS40MzQsMjQ5LjMzIDI4Ny4xNCwyNjIuNDk4IDI3OC44ODgsMjY2LjQ3MSBDMjcwLjYzOCwyNzAuNDQ3IDI0My4yMDUsMjg5LjE0OSAyMjMuNDA0LDI1Mi4wMTYgQzIyMy4zOTgsMjUyLjAwNSAyMjMuMzkyLDI1MS45OTMgMjIzLjM4NiwyNTEuOTgxIEMxOTguNjk5LDI4NC4wMiAxNjkuNTU0LDI3Mi45MjEgMTY5LjU1NCwyNzIuOTIxIEMxNjkuNTU0LDI3Mi45MjEgMTQ3LjEzOSwyNjUuMzA4IDEzOS4yODEsMjQyLjkzNCBDMTI2LjU2NiwyNjAuMTI3IDEwOC41NjgsMjczLjIzNSA4Ni44NjEsMjc0Ljk0IEw4NC42NTIsMjc0Ljk0IEM3Ni42MzksMjc1LjA1MSA2OS4wNTUsMjcyLjUyOSA2Mi4zOTUsMjY4LjE3NiBDNjEuOTc0LDI2Ny44ODMgNjEuNDg5LDI2Ny41MTIgNjEuMTI3LDI2Ny4yMTUgQzI3LjAxOSwyNDAuNTYxIDMyLjMyMywxNzcuNTUgMzkuMzQ4LDEzOS4zNDUgTDguMzg4LDEzNy42MzUgQzQuODQ2LDEzNi42MjEgMi43MTYsMTM0LjkzNSAxLjI5LDEzMC45NDggTDAuMDA0LDEyNi4zOTQgQy0wLjExLDEyMi41ODggMi41MjQsMTE5LjQyIDYuNjkxLDExOS4yOTYgTDQzLjUwOSwxMTkuNzU5IEM0NS4yNiwxMTIuNTIxIDQ2LjU1NCwxMDguMjE3IDQ2LjU1NCwxMDguMjE3IEM0Ni41NTUsMTA4LjIxNiA0Ni41NTYsMTA4LjIxNSA0Ni41NTcsMTA4LjIxMyBDNDguNjk5LDk5LjA1NSA1MS4yMDksODkuNzM0IDUzLjg3OCw4MS41OTYgQzU3LjgzNyw2OS41MjYgNjIuMjc0LDU4Ljc5IDY3LjE5LDQ5LjM5IEM3Mi4xMDQsMzkuOTkyIDc3LjQ3MSwzMi40NTMgODMuMjkzLDI2Ljc3NCBDODkuMTEyLDIxLjA5NyA5NS4yMiwxOC4yNTggMTAxLjYxNCwxOC4yNTggQzEwNS43MTYsMTguMjU4IDEwOS40NjMsMTkuNDAyIDExMi44NTEsMjEuNjkzIEMxMTYuMjM3LDIzLjk4MyAxMTkuMTI1LDI3LjAzOCAxMjEuNTExLDMwLjg1MyBDMTIzLjg5NSwzNC42NzIgMTI1LjczNCwzOS4xMzQgMTI3LjAyMiw0NC4yMzcgQzEyOC4zMSw0OS4zNDQgMTI4Ljk1NCw1NC42NjQgMTI4Ljk1NCw2MC4xOTcgQzEyOC45NTQsNjQuODc0IDEyOC4yODUsNjkuODEyIDEyNi45NSw3NS4wMTIgQzEyNS42MTIsODAuMjE0IDEyMy44MDEsODUuNTExIDEyMS41MTEsOTAuOSBDMTE5LjIyLDk2LjI5MiAxMTYuNTQxLDEwMS43NjYgMTEzLjQyMywxMDcuMjkgQzExMC43MTksMTEyLjA4IDEwOC4wNzcsMTE2LjUwOCAxMDUuNTc2LDEyMC41NDEgTDE0Mi40MTIsMTIxLjAwNCBDMTUwLjQ2OCwxMjEuMTQzIDE1Mi45MTUsMTI2LjA4MiAxNTMuMDI5LDEyOS44ODggQzE1My4wMjksMTI5Ljg4OCAxNTMuMjQ4LDEzMi40NDIgMTUyLjY0MiwxMzYuMjE4IEMxNTIuMDM3LDEzOS45OTUgMTUwLjQxMSwxNDQuOTEgMTQzLjcwNywxNDUuMTEgTDkwLjk5OSwxNDIuMTk5IEM4OC45MzEsMTQ1LjAwNyA4Ny43MywxNDYuNTA5IDg3LjczLDE0Ni41MDkgQzg0Ljk2MiwxNTAuMzI3IDgyLjE3MSwxNTQuMDczIDc5LjM1NiwxNTcuNzQ2IEM3Ni41NDEsMTYxLjQyMSA2Ny40NCwxNzEuNzY1IDY1LjcxNywxODYuNDE5IEM2NS41MywxODguMDA1IDY1LjA1OSwxOTIuMTkzIDY1LjA1NCwxOTguMDcgTDY1LjA1MywxOTguMDc4IEM2NS4wNTMsMTk4LjA3OCA2My40ODQsMjQxLjM2MiA4NC4zNjMsMjQ2LjE1MSBDOTMuMjE1LDI0OC4xODEgMTA1LjAxNSwyNDYuMTMzIDExNi4yMDcsMjM5LjQyNSBDMTI2LjI2MiwyMzMuNCAxMzMuNjgyLDIyNS4zMjYgMTM4LjU0MSwyMTEuMTIyIEMxMzkuMjg0LDIwOC4wMjkgMTQwLjI1NCwyMDQuNzk3IDE0MS40ODIsMjAxLjQxNyBDMTU5LjAwNCwxNTMuMjA4IDE5OS43NjQsMTQ2LjQwNSAyMDkuNzc3LDE0NS40NTUgQzIxMS40MjcsMTEwLjUgMjE3LjU0MSw3NS41NTcgMjI4LjQzMyw1Mi43MzkgQzIzOC42NjgsMzMuMDE0IDI1Mi4wMTksMS4zNDYgMjc4LjA2OSwwLjE2MyB6IE0yMDkuNDI1LDE3NC4xMzkgQzE5OC4zOTIsMTc1LjcxNiAxNzUuMjUsMTgzLjcwMyAxNjguMTE5LDIyMi40OTYgQzE2MS41NzYsMjY5LjA5MSAyMDcuNzQsMjU5LjA2MSAyMTYuNzE2LDIzNC4wMzggQzIxMi40MTIsMjE3LjkwOSAyMDkuOTUxLDE5Ni43NjEgMjA5LjQyNSwxNzQuMTM5IHogTTI3My4yMzgsMzMuMTQzIEMyNzAuMTgzLDMzLjE0MyAyNjcuNDE2LDM1LjA3NiAyNjQuOTM1LDM4Ljk0IEMyNjIuNDUzLDQyLjgwNSAyNjAuMjU5LDQ3Ljc0NCAyNTguMzUxLDUzLjc1NiBDMjU2LjQ0MSw1OS43NjcgMjU0Ljc3Myw2Ni40MDEgMjUzLjM0MSw3My42NTIgQzI1MS45MSw4MC45MDUgMjUwLjcxNSw4Ny45MTkgMjQ5Ljc2Myw5NC42OTMgQzI0OC44MDgsMTAxLjQ3IDI0OC4wNDUsMTA3LjU3NiAyNDcuNDcyLDExMy4wMTUgQzI0Ni45LDExOC40NTQgMjQ2LjUxNywxMjIuMzE5IDI0Ni4zMjgsMTI0LjYwOSBDMjQ1Ljk0NSwxMjkuMjg2IDI0NS42MzMsMTMzLjc5NSAyNDUuMzk2LDEzOC4xMzUgQzI0NS4xNTgsMTQyLjQ3OSAyNDQuOTksMTQ2LjQzNyAyNDQuODk2LDE1MC4wMTYgQzI0NC44LDE1My41OTQgMjQ0Ljc1MywxNTYuNzIxIDI0NC43NTMsMTU5LjM5MSBMMjQ0Ljc1MywxNjYuOTc4IEMyNTAuMTkyLDE1NC41NzQgMjU1LjIwMiwxNDIuMjE2IDI1OS43ODIsMTI5LjkwNSBDMjYxLjY5LDEyNC42NTggMjYzLjYyMywxMTkuMTQ3IDI2NS41OCwxMTMuMzczIEMyNjcuNTM0LDEwNy42IDI2OS4zMjMsMTAxLjgwMyAyNzAuOTQ3LDk1Ljk4MiBDMjcyLjU2OSw5MC4xNjIgMjczLjk3NSw4NC40MzYgMjc1LjE3LDc4LjgwNCBDMjc2LjM2MSw3My4xNzYgMjc3LjE5Nyw2Ny44MzMgMjc3LjY3NCw2Mi43NzMgQzI3OC4yNDcsNTYuMDk2IDI3OC41MzMsNTAuNzk5IDI3OC41MzMsNDYuODg2IEMyNzguNTMzLDQxLjczMiAyNzguMDgsMzguMTU0IDI3Ny4xNzMsMzYuMTUgQzI3Ni4yNjUsMzQuMTQ2IDI3NC45NTUsMzMuMTQzIDI3My4yMzgsMzMuMTQzIHogTTk5LjQ3Niw0OC4yOTUgQzk1LjI4Miw0OS4yMTQgOTIuOTYsNTMuNDcgOTAuOTUsNTYuOTA1IEM4MS44NDMsNzMuMTIgNzMuMTc0LDExMi4yNDUgNzEuNDI2LDEyMC4xMSBMODAuNjk4LDEyMC4yMjcgQzgzLjM5MSwxMTUuNjI0IDg2LjE4NywxMTAuNjcyIDg5LjA5LDEwNS4zNTcgQzkyLjE4OSw5OS42OCA5NC45ODEsOTQuMDk4IDk3LjQ2NCw4OC42MDkgQzk5Ljk0NCw4My4xMjQgMTAxLjk5NCw3Ny45OTYgMTAzLjYxOCw3My4yMjIgQzEwNS4yNCw2OC40NTIgMTA2LjA5MSw2NC41NCAxMDYuMDUyLDYxLjQ4NSBDMTA1LjgzNCw1Ny44MTMgMTA1LjAzMSw0OS43MjQgMTAwLjY1MSw0OC40MyBDMTAwLjI3Myw0OC4zMTkgOTkuODY4LDQ4LjM0IDk5LjQ3Niw0OC4yOTUgeiIgZmlsbD0iIzFBMTkxOSIvPgogIDwvZz4KPC9zdmc+Cg==")
         br
         br
         br
@@ -13,14 +13,14 @@ html(lang='en')
         br
         br
         br
-        p.title CIS Amazon Web Service Foundations Audit
+        p(style="text-align: center;font-weight: bold;font-size: 4pc;") CIS Amazon Web Service Foundations Audit
         br
-        p.customer #{customer}
+        p(style="text-align: center;font-weight: bold;font-size: 3pc;") #{customer}
         br
         br
-        p.subtitle Account Number #{json[0]["Account Number"]}
-        p.subtitle Generated on #{moment().format('MM/DD/YYYY')}
-        div.break-before
+        p(style="text-align: center;font-weight: bold;font-size: 1pc;") Account Number #{json[0]["Account Number"]}
+        p(style="text-align: center;font-weight: bold;font-size: 1pc;") Generated on #{moment().format('MM/DD/YYYY')}
+        div(style="page-break-before: always;page-break-after:always;padding: 20px 40px;")
             h1 Overview
             br
             p
@@ -33,36 +33,42 @@ html(lang='en')
             p
                 | This report is provided on an "AS IS" basis.  It is provided without warranty of any kinds and disclaims all warranties whether express or implied. Test Double is not associated
                 | with the Center for Internet Security.  This assessment is not certified by the Center for Internet Security.
+        div(style="padding: 20px 40px;text-align:center;")
+            h2 Results
         each c in json
-            div.break-before
-                table.table
-                    tr
-                        th.align-left Control ID
-                        th.align-left Description
-                        th.align-right Severity
+            div(style="padding: 20px 40px;")
+                table(style="width: 100%;table-layout:fixed;margin-bottom: 10px;")
+                    tr(style="margin-bottom: 10px;")
+                        th(style="text-align: left;") Control ID
+                        th(style="text-align: left;", colspan="3") Description
+                        th
+                        th(style="text-align: right;") Severity
                     tr
                         td= c["Control ID"]
-                        td= c.Control
-                        td.align-right= c.Severity
-                table.table
-                    tr
-                            th.align-left Status
-                            th.align-left Message
+                        td(colspan="3")= c.Control
+                        td
+                        td(style="text-align: right;")= c.Severity
+                table(style="width: 100%;table-layout:fixed")
+                    tr(style="margin-bottom: 10px;")
+                            th(style="text-align: left;") Status
+                            th(style="text-align: left;", colspan="3") Message
+                            th
+                            th
                     each r in c.Results
                         if r.Status == "Pass"
                             tr
-                                td.pass= r.Status
-                                td.pass= r.Message
+                                td(style="color: green;padding: 5px 5px 5px 0px;")= r.Status
+                                td(style="color: green;padding: 5px 5px 5px 0px;", colspan="3")= r.Message
                         if r.Status == "FAIL"
                             tr
-                                td.fail= r.Status
-                                td.fail= r.Message
+                                td(style="color: red;padding: 5px 5px 5px 0px;")= r.Status
+                                td(style="color: red;padding: 5px 5px 5px 0px;", colspan="3").fail= r.Message
                         if r.Status == "Info"
                             tr
-                                td.info= r.Status
-                                td.info= r.Message
+                                td(style="color: black;padding: 5px;")= r.Status
+                                td(style="color: black;padding: 5px 5px 5px 0px;", colspan="3")= r.Message
                 hr
-        div.break-before
+        div(style="page-break-before: always;padding: 20px 40px;")
             h1 References
             p This report reflects best security practices as presented in the Center for Internet Security Top 20
             a(href='https://www.cisecurity.org/controls/cis-controls-list/') CIS Security Top 20

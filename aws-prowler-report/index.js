@@ -1,5 +1,6 @@
 const fs = require('fs');
 const _ = require('lodash');
+const html_to_pdf = require('html-pdf-node')
 const pug = require('pug');
 const moment = require('moment');
 const { program } = require('commander');
@@ -16,10 +17,23 @@ let customer = `${program.customer}`;
 //let raw = 'prowler-output-sample.json'
 let file = fs.readFileSync(raw);
 let json = file.toString().trim().split('\n').map(JSON.parse);
+
+// The severity needs to correspond with static ints to easily
+// sort the audit array
+const SeveritySortHash ={
+    "Critical": -2,
+    "High": -1,
+    "Medium": 0,
+    "Low": 1
+}
+
 let grouped = _.groupBy(json,"Control ID");
+
 let audit = [];
+
 for (a in grouped){
-    let test = grouped[a].reduce((n,o) => {
+    let test = grouped[a]
+        .reduce((n,o) => {
         (n.Results || (n.Results = [])).push({"Status": o.Status, "Message": o.Message});
         n.Profile = o.Profile;
         n["Account Number"] = o["Account Number"];
@@ -30,8 +44,21 @@ for (a in grouped){
         return n;
     },{});
     audit.push(test);
-    console.log(audit);
 }
+
+// sort the entire audit array by severity
+audit.sort((a,b) => SeveritySortHash[a.Severity] - SeveritySortHash[b.Severity])
+
+// this is where the output files get written
 fs.writeFileSync('report.json',JSON.stringify(audit));
+
 const compiledFunction = pug.compileFile('./assets/template.pug');
-fs.writeFileSync(out,compiledFunction({'json': audit, 'moment': moment, 'customer' : customer}));
+fs.writeFileSync(out, compiledFunction({'json': audit, 'moment': moment, 'customer' : customer}));
+
+
+// this is the config portions for the generatation of the pdf
+let options = { format: 'A4', path: './output/output.pdf' };
+var outHtml = fs.readFileSync(out, 'utf8');
+
+let htmlFile = { content: outHtml.toString() };
+html_to_pdf.generatePdf(htmlFile, options)
