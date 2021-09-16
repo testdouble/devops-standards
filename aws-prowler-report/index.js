@@ -1,6 +1,6 @@
 const fs = require('fs');
 const _ = require('lodash');
-const html_to_pdf = require('html-pdf-node')
+var pdf = require('html-pdf');
 const pug = require('pug');
 const moment = require('moment');
 const { program } = require('commander');
@@ -57,8 +57,11 @@ fs.writeFileSync(out, compiledFunction({'json': audit, 'moment': moment, 'custom
 
 
 // this is the config portions for the generatation of the pdf
-let options = { format: 'A4', path: './output/output.pdf' };
+// let options = { format: 'A4', path: './output/output.pdf' };
 var outHtml = fs.readFileSync(out, 'utf8');
 
-let htmlFile = { content: outHtml.toString() };
-html_to_pdf.generatePdf(htmlFile, options)
+// let htmlFile = { content: outHtml.toString() };
+// html_to_pdf.generatePdf(htmlFile, options)
+
+
+pdf.create(outHtml, { format: 'Letter'}).toFile('./output/output.pdf', () => {});
