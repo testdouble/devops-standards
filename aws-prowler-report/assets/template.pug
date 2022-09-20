@@ -1,7 +1,7 @@
 doctype html
 html(lang='en',style="-webkit-print-color-adjust: exact;")
     head
-        title CIS Amazon Web Service Foundations Report
+        title CIS Amazon Web Services Foundations Report
         style(type="text/css").
             body {
                 font-family: "Source Sans Pro", sans-serif;
@@ -93,7 +93,7 @@ html(lang='en',style="-webkit-print-color-adjust: exact;")
         br
         br
         br
-        p.title CIS Amazon Web Service Foundations Audit
+        p.title CIS Amazon Web Services Foundations Audit
         br
         p.customer #{customer}
         br
@@ -105,7 +105,7 @@ html(lang='en',style="-webkit-print-color-adjust: exact;")
             br
             p
                 | Test Double believes that security is a critical part of any mature software development lifecycle. Therefore, we have developed this report to assess the use of AWS Best Security Practices.
-                | Drawing from the industry standard Center for Internet Security (CIS) Top 20 Critical Controls, the CIS Amazon Web Service Foundations Benchmark, which is the basis for this report,
+                | Drawing from the industry standard Center for Internet Security (CIS) Top 20 Critical Controls, the CIS Amazon Web Services Foundations Benchmark, which is the basis for this report,
                 | seeks to establish baseline security controls for an AWS account.
             br
             h1 Liability Disclaimer
@@ -135,15 +135,15 @@ html(lang='en',style="-webkit-print-color-adjust: exact;")
                             th
                             th
                     each r in c.Results
-                        if r.Status == "Pass"
+                        if r.Status.toUpperCase() == "PASS"
                             tr
                                 td.pass.cell-padding= r.Status
                                 td.pass.cell-padding(colspan="3")= r.Message
-                        if r.Status == "FAIL"
+                        if r.Status.toUpperCase() == "FAIL"
                             tr
                                 td.fail.cell-padding= r.Status
                                 td.fail.cell-padding(colspan="3").fail= r.Message
-                        if r.Status == "Info"
+                        if r.Status.toUpperCase() == "INFO"
                             tr
                                 td.info.cell-padding= r.Status
                                 td.info.cell-padding(colspan="3")= r.Message
