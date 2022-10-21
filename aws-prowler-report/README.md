@@ -39,6 +39,12 @@ This takes a while.... ~30m-1h. DO NOT close the lid of your laptop.
 
 This outputs a JSON file to `./output` to be used in the next step.
 
+If you want to only run the report for specific regions, [use the `-f` option](https://github.com/prowler-cloud/prowler#regions) like so:
+
+```sh
+docker run -it --rm --name prowler -v $(pwd)/output:/prowler/output --env AWS_ACCESS_KEY_ID --env AWS_SECRET_ACCESS_KEY --env AWS_SESSION_TOKEN toniblyx/prowler -g cislevel2 -M json -f us-east-1,ap-northeast-3
+```
+
 ### Convert the Report to HTML and then render to PDF
 
 You will need node installed with the version specified in `.tool-versions`
