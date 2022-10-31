@@ -30,11 +30,22 @@ html(lang='en',style="-webkit-print-color-adjust: exact;")
                 table-layout:fixed
             }
 
+            .summary {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            .summary, .summary th, .summary td {
+                border: 1px solid black;
+                padding: 1em;
+            }
+
             .title {
                 text-align: center;
                 font-weight: bold;
                 font-size: 4pc;
             }
+
             .customer {
                 text-align: center;
                 font-weight: bold;
@@ -98,7 +109,7 @@ html(lang='en',style="-webkit-print-color-adjust: exact;")
         p.customer #{customer}
         br
         br
-        p.subtitle Account Number #{json[0]["Account Number"]}
+        p.subtitle Account Number #{audit[0]["Account Number"]}
         p.subtitle Generated on #{moment().format('MM/DD/YYYY')}
         div.container.break-before.break-after
             h1 Overview
@@ -113,9 +124,26 @@ html(lang='en',style="-webkit-print-color-adjust: exact;")
             p
                 | This report is provided on an "AS IS" basis.  It is provided without warranty of any kinds and disclaims all warranties whether express or implied. Test Double is not associated
                 | with the Center for Internet Security.  This assessment is not certified by the Center for Internet Security.
-        div.container.center
+        div.container.center.break-before
+            h2 Summary of Failed Checks
+        div.container
+            table.summary
+                tr
+                    th Region
+                    th Critical
+                    th High
+                    th Medium
+                    th Low
+                each region in summary
+                    tr
+                        td= region.region
+                        td= region.Critical || 0
+                        td= region.High || 0
+                        td= region.Medium || 0
+                        td= region.Low || 0
+        div.container.center.break-before
             h2 Results
-        each c in json
+        each c in audit
             div.container
                 table.table.mb-10
                     tr.mb-10

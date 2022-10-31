@@ -48,12 +48,29 @@ for (a in grouped){
 // Sort the entire audit array by severity
 audit.sort((a,b) => SeveritySortHash[a.Severity] - SeveritySortHash[b.Severity])
 
+let summary = _.sortBy(
+  _.map(
+    _.groupBy(
+      _.filter(json, a => a.Status.toUpperCase() == 'FAIL'),
+      "Region"
+    ),
+    (json_r, region) => {
+      return {region:region ,..._.countBy(json_r, "Severity")}
+    }
+  )
+, 'region')
+
 // Uncomment this if you want to see the intermediate step for the JSON
 // fs.writeFileSync('report.json', JSON.stringify(audit,  null, 2));
 
 // Render HTML
 const compiledFunction = pug.compileFile('./assets/template.pug');
-fs.writeFileSync('./output/output.html', compiledFunction({'json': audit, 'moment': moment, 'customer' : customer}));
+fs.writeFileSync('./output/output.html', compiledFunction({
+  summary: summary,
+  audit: audit,
+  moment: moment,
+  customer: customer
+}));
 
 // HTML -> PDF
 let options = { format: 'A4', path: out };
