@@ -32,7 +32,7 @@ cd devops-standards/aws-prowler-report
 
 ```sh
 docker pull toniblyx/prowler
-docker run -it --rm --name prowler -v $(pwd)/output:/prowler/output --env AWS_ACCESS_KEY_ID --env AWS_SECRET_ACCESS_KEY --env AWS_SESSION_TOKEN toniblyx/prowler -g cislevel2 -M json
+docker run -it --rm --name prowler -v $(pwd)/output:/prowler/output --env AWS_ACCESS_KEY_ID --env AWS_SECRET_ACCESS_KEY --env AWS_SESSION_TOKEN toniblyx/prowler -g cislevel1 -M json
 ```
 
 This takes a while.... ~30m-1h. DO NOT close the lid of your laptop.
